@@ -3,6 +3,6 @@
 if [ -f Gemfile ] ; then
   bundle install
 else
-  rails new . --database=mysql --css=tailwind --force
+  rails new . --database=sqlite3 --css=tailwind --force
 fi
 bin/dev

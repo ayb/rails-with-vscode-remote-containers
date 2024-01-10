@@ -2,46 +2,56 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.231.6/containers/docker-existing-docker-compose
 // If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
 {
-	"name": "Rails App",
-
+	"name": "Rails 7.0.4 App",
+	
 	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
 	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
 	"dockerComposeFile": [
 		"../docker-compose.yml",
 	],
-
+	
 	// The 'service' property is the name of the service for the container that VS Code should
 	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
 	"service": "app",
-
+	
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
 	"workspaceFolder": "/app",
-
-	// Set *default* container specific settings.json values on container create.
-	"settings": {},
-
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"aki77.rails-db-schema",
-		"castwide.solargraph",
-		"kaiwood.endwise",
-		"koichisasada.vscode-rdbg",
-		"rebornix.ruby",
-		"redhat.vscode-yaml"
-	]
-
+	
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"Shopify.ruby-lsp",
+				"KoichiSasada.vscode-rdbg",
+				"bung87.vscode-gemfile",
+				"eamodio.gitlens",
+				"mhutchie.git-graph",
+				"ryu1kn.partial-diff",
+				"ms-vscode-remote.remote-ssh",
+				"ms-vscode-remote.remote-ssh-edit",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"aki77.rails-db-schema",
+				"jemmyw.rails-fast-nav",
+				"aki77.rails-partial",
+				"aki77.rails-routes",
+				"Cjay.ruby-and-rails-snippets",
+				"vayan.haml",
+				"redhat.vscode-yaml"
+			]
+		}
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
+	
 	// Uncomment the next line if you want start specific services in your Docker Compose config.
 	// "runServices": [],
-
+	
 	// Uncomment the next line if you want to keep your containers running after VS Code shuts down.
 	// "shutdownAction": "none",
-
+	
 	// Uncomment the next line to run commands after the container is created - for example installing curl.
-	// "postCreateCommand": "apt-get update && apt-get install -y curl",
+	"postCreateCommand": "rails --version",
 
 	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
